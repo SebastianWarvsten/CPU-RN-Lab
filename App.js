@@ -1,14 +1,27 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import Startpage from "./Components/Startpage";
+import { Page2 } from "./Components/Page2";
+import { UserContext } from "./Components/UserContext";
+// import { BrowserRouter as Router, Route, Link } from "react-router-native";
 
 export default function App() {
+  const [value, setValue] = useState("Stranger");
   return (
+    // <Router>
+    //   <Link to="/">Startpage</Link>
+    //   <Link to="/Page2">Page2</Link>
     <View style={styles.container}>
-      <Startpage />
-      <StatusBar style="auto" />
+      <UserContext.Provider value={{ value, setValue }}>
+        <Startpage />
+        <Page2 />
+        <StatusBar style="auto" />
+        {/* <Route path="/" exact component={Startpage} />
+        <Route path="/" exact component={Page2} /> */}
+      </UserContext.Provider>
     </View>
+    // </Router>
   );
 }
 

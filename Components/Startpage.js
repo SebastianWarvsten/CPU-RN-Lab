@@ -34,6 +34,7 @@ export default function Startpage({ navigation }) {
         title="To OvningsTest"
         onPress={() => navigation.push("OvningsTest")}
       />
+      <Button title="To Currency" onPress={() => navigation.push("Currency")} />
     </View>
   );
 }

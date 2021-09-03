@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Startpage from "./Components/Startpage";
 import { Page2 } from "./Components/Page2";
 import { OvningsTest } from "./Components/OvningsTest";
+import { Currency } from "./Components/Currency";
 import { UserContext } from "./Components/UserContext";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -16,6 +17,7 @@ export default function App() {
           <Stack.Screen name="Startpage" component={Startpage} />
           <Stack.Screen name="Page2" component={Page2} />
           <Stack.Screen name="OvningsTest" component={OvningsTest} />
+          <Stack.Screen name="Currency" component={Currency} />
         </Stack.Navigator>
       </UserContext.Provider>
     </NavigationContainer>

@@ -1,10 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View, Button } from "react-native";
 import { useState, useContext } from "react";
 import { UserContext } from "./UserContext";
 
-export default function Startpage() {
+export default function Startpage({ navigation }) {
   const { value, setValue } = useContext(UserContext);
 
   function textChanged(props) {
@@ -22,13 +21,19 @@ export default function Startpage() {
 
   return (
     <View style={styles.container}>
-      <Text>Enter your name!</Text>
+      <Text>Välkommen {value}!</Text>
       <TextInput
-        placeholder="Insert some text"
+        placeholder="Enter your name:"
         onChangeText={(text) => textChanged(text)}
       />
-      <Text>Välkommen {value}!</Text>
-      <StatusBar style="auto" />
+      {/* Om "Enter your name:"- rutan är tom ska knappens title vara Procede anonumusly */}
+      {/* För det krävs en conditional variabel man sätter till texten om rutan är tom */}
+      {/* Contituinal variabeln ska vara (om text finns i rutan) ? {value} : Stranger */}
+      <Button title="To Page2" onPress={() => navigation.push("Page2")} />
+      <Button
+        title="To OvningsTest"
+        onPress={() => navigation.push("OvningsTest")}
+      />
     </View>
   );
 }

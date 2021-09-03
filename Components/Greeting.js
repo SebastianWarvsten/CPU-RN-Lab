@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-export function OvningsTest() {
+export function Greeting() {
   const [greeting, setGreeting] = useState("");
   return (
     <View style={styles.container}>
       <Text>abc</Text>
       <Text testID="greeting">{greeting}</Text>
-      <Button title="Säg hej!" onPress={() => setGreeting("Tjenare")} />
+      <Button title="Say hello!" onPress={() => setGreeting("Hi there!")} />
     </View>
   );
 }

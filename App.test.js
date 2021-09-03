@@ -10,10 +10,10 @@ it("renders correctly", () => {
   renderer.create(<App />);
 });
 
-const { getByText } = render(<App />);
+const { getByText } = render(<OvningsTest />);
 const element = getByText("abc");
 
-//Test 2: Kolla om en knapp blir tryckt på och att utskriften blir som förväntat
+//Test 2: Kolla om utskrift blir som förväntat efter knapptryck
 it("have right text", () => {
   const { getByTestId, getByText } = render(<OvningsTest />);
   expect(getByTestId("greeting").props.children).toBe("");
@@ -23,5 +23,3 @@ it("have right text", () => {
 
   expect(getByTestId("greeting").props.children).toBe("Tjenare");
 });
-
-//Test 3: Debugga testkoden

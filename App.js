@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Startpage from "./Components/Startpage";
-import { Page2 } from "./Components/Page2";
-import { OvningsTest } from "./Components/OvningsTest";
+import { Anonymous } from "./Components/Anonymous";
+import { Greeting } from "./Components/Greeting";
 import { Currency } from "./Components/Currency";
 import { UserContext } from "./Components/UserContext";
 import { NavigationContainer } from "@react-navigation/native";
@@ -15,8 +15,8 @@ export default function App() {
       <UserContext.Provider value={{ value, setValue }}>
         <Stack.Navigator initialRoutName="Startpage">
           <Stack.Screen name="Startpage" component={Startpage} />
-          <Stack.Screen name="Page2" component={Page2} />
-          <Stack.Screen name="OvningsTest" component={OvningsTest} />
+          <Stack.Screen name="Anonymous" component={Anonymous} />
+          <Stack.Screen name="Greeting" component={Greeting} />
           <Stack.Screen name="Currency" component={Currency} />
         </Stack.Navigator>
       </UserContext.Provider>

@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  ScrollView,
+} from "react-native";
 
 export function Currency() {
   const [currency, setCurrency] = useState("EUR");
@@ -51,42 +58,26 @@ export function Currency() {
         Växlingskurs för {amount} {currency}{" "}
         <Image source={{ uri: pic }} style={{ width: 50, height: 40 }} />
       </Text>
-      {currency ? (
-        <Text>The currenct currancy is: {currency}</Text>
-      ) : (
-        <Text>There is no currancy chosen</Text>
-      )}
-      {rates ? (
-        <Text>USD: {rates.USD * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {rates ? (
-        <Text>AUD: {rates.AUD * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {rates ? (
-        <Text>CAD: {rates.CAD * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {rates ? (
-        <Text>NOK: {rates.NOK * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {rates ? (
-        <Text>EUR: {rates.EUR * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {rates ? (
-        <Text>SEK: {rates.SEK * amount}</Text>
-      ) : (
-        <Text>No rates where found</Text>
-      )}
-      {/* 2. Lägg till en knapp */}
+      <View style={{ height: 150 }}>
+        <ScrollView>
+          {rates ? (
+            <>
+              <Text>USD: {rates.USD * amount}</Text>
+              <Text>AUD: {rates.AUD * amount}</Text>
+              <Text>CAD: {rates.CAD * amount}</Text>
+              <Text>NOK: {rates.NOK * amount}</Text>
+              <Text>EUR: {rates.EUR * amount}</Text>
+              <Text>SEK: {rates.SEK * amount}</Text>
+              <Text>GBP: {rates.GBP * amount}</Text>
+              <Text>HRK: {rates.HRK * amount}</Text>
+              <Text>RUB: {rates.RUB * amount}</Text>
+            </>
+          ) : (
+            <Text>No rates where found</Text>
+          )}
+        </ScrollView>
+      </View>
+
       <Button
         title="SEK"
         onPress={() => {
@@ -114,7 +105,6 @@ export function Currency() {
       >
         USD
       </Button>
-      {/* 3. Lägg till fält att fylla i en summa efter valda valutor */}
       <br />
       <input
         type="textfield"
@@ -136,6 +126,5 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 30,
-    fontStyle: "bold",
   },
 });

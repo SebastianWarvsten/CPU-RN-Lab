@@ -55,7 +55,7 @@ export function Currency() {
   return (
     <View>
       <Text style={styles.header}>
-        Växlingskurs för {amount} {currency}{" "}
+        Exchange for {amount} {currency}{" "}
         <Image source={{ uri: pic }} style={{ width: 50, height: 40 }} />
       </Text>
       <View style={{ height: 150 }}>

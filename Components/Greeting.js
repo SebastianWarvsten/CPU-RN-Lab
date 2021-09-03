@@ -5,7 +5,6 @@ export function Greeting() {
   const [greeting, setGreeting] = useState("");
   return (
     <View style={styles.container}>
-      <Text>abc</Text>
       <Text testID="greeting">{greeting}</Text>
       <Button title="Say hello!" onPress={() => setGreeting("Hi there!")} />
     </View>
